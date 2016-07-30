@@ -1,0 +1,25 @@
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+venv/*
+venv/
+venv
+venv/bin/*
+venv/bin
+venv/.Python
+venv/bin/activate
+venv/bin/activate.csh
+venv/bin/activate.fish
+venv/bin/activate_this.py
+venv/bin/easy_install
+flaskr/*.pyc
+flaskr/*.db
