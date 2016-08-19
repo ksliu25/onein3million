@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_slideshow') }}" method=post class=add-slideshow enctype=multipart/form-data>
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Blurb:
+        <dd><input type=text size=30 name=blurb>
+        <dt>Description:
+        <dd><textarea type=text rows=5 cols=40 name=description></textarea>
+        <!-- <dd><input type=submit value="Upload soundclip"> -->
+      </dl>
+      <input type=file name=file[] multiple>
+      <input type=submit value=Submit>
+    </form>
+  {% endif %}
+  <ul class=entries>
+  {% for slideshow in slideshows %}
+    <li><h2>{{ slideshow.title }}</h2>
+    <li>{{ slideshow.blurb }}
+    <li>{{ slideshow.description }}
+    <li>{{ slideshow.soundclip_s3_url }}
+  {% else %}
+    <li><em> No slideshows </em>
+  {% endfor %}
+  </ul>
+{% endblock %}
